@@ -24,6 +24,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-eunuch.git'
 Bundle 'tpope/vim-speeddating'
+Bundle 'scrooloose/syntastic'
 "Bundle 'klen/python-mode'
 
 " Non github
