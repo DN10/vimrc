@@ -12,7 +12,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'jcf/vim-latex'
 Bundle 'wlangstroth/vim-haskell'
 Bundle 'tpope/vim-ragtag'
-Bundle 'rson/vim-conque'
+"Bundle 'rson/vim-conque'
 Bundle 'hsitz/VimOrganizer'
 Bundle 'utl.vim'
 Bundle 'calendar.vim--Matsumoto'
@@ -25,6 +25,7 @@ Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-eunuch.git'
 Bundle 'tpope/vim-speeddating'
 Bundle 'scrooloose/syntastic'
+Bundle 'puppetlabs/puppet-syntax-vim'
 "Bundle 'klen/python-mode'
 
 " Non github
@@ -119,7 +120,6 @@ autocmd FileType haskell setlocal tabstop=8
 
 " For all text files set 'textwidth' to 78 characters.
 "autocmd FileType text setlocal textwidth=78
-set guifont=Droid\ Sans\ Mono\ 14
 
 let g:Tex_CompileRule_pdf='pdflatex --shell-escape -synctex=1 --interaction=nonstopmode $*'
 let g:Tex_MultipleCompileFormats='pdf,aux,dvi,ps'
