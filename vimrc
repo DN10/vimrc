@@ -26,6 +26,8 @@ Bundle 'tpope/vim-eunuch.git'
 Bundle 'tpope/vim-speeddating'
 Bundle 'scrooloose/syntastic'
 Bundle 'puppetlabs/puppet-syntax-vim'
+Bundle 'suan/vim-instant-markdown'
+Bundle 'tpope/vim-markdown'
 "Bundle 'klen/python-mode'
 
 " Non github
@@ -121,9 +123,14 @@ autocmd FileType haskell setlocal tabstop=8
 " For all text files set 'textwidth' to 78 characters.
 "autocmd FileType text setlocal textwidth=78
 
+" LaTeX
 let g:Tex_CompileRule_pdf='pdflatex --shell-escape -synctex=1 --interaction=nonstopmode $*'
 let g:Tex_MultipleCompileFormats='pdf,aux,dvi,ps'
 let g:Tex_DefaultTargetFormat='pdf'
 
+" Fugitive
+command GSquashLast2 Git rebase -i HEAD~2
+
 " Mouse highlight quick copy
 vmap <C-C> "+y
+set guifont=DejaVu\ Sans\ Mono:h14
