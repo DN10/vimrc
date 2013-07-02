@@ -26,7 +26,6 @@ Bundle 'tpope/vim-eunuch.git'
 Bundle 'tpope/vim-speeddating'
 Bundle 'scrooloose/syntastic'
 Bundle 'puppetlabs/puppet-syntax-vim'
-Bundle 'suan/vim-instant-markdown'
 Bundle 'tpope/vim-markdown'
 "Bundle 'klen/python-mode'
 
