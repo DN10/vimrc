@@ -27,7 +27,9 @@ Bundle 'tpope/vim-speeddating'
 Bundle 'scrooloose/syntastic'
 Bundle 'puppetlabs/puppet-syntax-vim'
 Bundle 'tpope/vim-markdown'
-"Bundle 'klen/python-mode'
+Bundle 'klen/python-mode'
+Bundle 'Conque-Shell'
+Bundle 'vim-ruby/vim-ruby'
 
 " Non github
 Bundle 'git://git.wincent.com/command-t.git'
@@ -114,6 +116,9 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd Filetype ruby,eruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
+" PHP
+autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2
+
 " Python
 "autocmd FileType python setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class  
 " Haskell
@@ -133,3 +138,7 @@ command GSquashLast2 Git rebase -i HEAD~2
 " Mouse highlight quick copy
 vmap <C-C> "+y
 set guifont=DejaVu\ Sans\ Mono:h14
+
+" Python Mode
+let g:mode_lint_checker = "pylint"
+let g:pymode_lint_ignore = "W0311,E501,E503,E111"
