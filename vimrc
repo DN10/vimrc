@@ -137,7 +137,14 @@ command GSquashLast2 Git rebase -i HEAD~2
 
 " Mouse highlight quick copy
 vmap <C-C> "+y
-set guifont=DejaVu\ Sans\ Mono:h14
+
+if has("gui_running")
+    if has("gui_gtk2")
+        set guifont=DejaVu\ Sans\ Mono\ Book\ 14
+    else
+        set guifont=DejaVu\ Sans\ Mono:h14
+    endif
+endif
 
 " Python Mode
 let g:mode_lint_checker = "pylint"
