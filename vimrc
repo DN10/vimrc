@@ -12,7 +12,6 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'jcf/vim-latex'
 Bundle 'wlangstroth/vim-haskell'
 Bundle 'tpope/vim-ragtag'
-"Bundle 'rson/vim-conque'
 Bundle 'hsitz/VimOrganizer'
 Bundle 'utl.vim'
 Bundle 'calendar.vim--Matsumoto'
@@ -30,6 +29,7 @@ Bundle 'tpope/vim-markdown'
 Bundle 'klen/python-mode'
 Bundle 'Conque-Shell'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'jnwhiteh/vim-golang'
 
 " Non github
 Bundle 'git://git.wincent.com/command-t.git'
@@ -144,6 +144,8 @@ if has("gui_running")
     else
         set guifont=DejaVu\ Sans\ Mono:h14
     endif
+    " Disable terminal bells
+    set vb t_vb=
 endif
 
 " Python Mode
