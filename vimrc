@@ -30,6 +30,7 @@ Bundle 'klen/python-mode'
 Bundle 'Conque-Shell'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'jnwhiteh/vim-golang'
+Bundle 'terryma/vim-multiple-cursors'
 Bundle 'Valloric/YouCompleteMe'
 
 " Non github
