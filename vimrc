@@ -34,6 +34,7 @@ Bundle 'terryma/vim-multiple-cursors'
 "Bundle 'airblade/vim-gitgutter'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'mileszs/ack.vim'
+Bundle 'wting/rust.vim'
 
 " Non github
 Bundle 'git://git.wincent.com/command-t.git'
