@@ -26,7 +26,7 @@ Bundle 'tpope/vim-speeddating'
 Bundle 'scrooloose/syntastic'
 Bundle 'rodjek/vim-puppet'
 Bundle 'tpope/vim-markdown'
-"Bundle 'klen/python-mode'
+Bundle 'klen/python-mode'
 "Bundle 'Conque-Shell'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'jnwhiteh/vim-golang'
@@ -60,10 +60,10 @@ set number		" Line numbers
 filetype on
 filetype indent on
 filetype plugin on
-set shiftwidth=4
-set tabstop=4		" Number of spaces to autoindent
+set shiftwidth=2
+set tabstop=2		" Number of spaces to autoindent
 set expandtab		" Converts tab to spaces
-set softtabstop=4
+set softtabstop=2
 set autoindent
 set backspace=indent,eol,start " Smart backspacing
 "let g:GetLatestVimScripts_allowautoinstall=1
@@ -125,6 +125,9 @@ autocmd Filetype ruby,eruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 " Python
+autocmd FileType python setlocal tabstop=2 shiftwidth=2 softtabstop=2
+
+" Python
 "autocmd FileType python setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class  
 " Haskell
 autocmd FileType haskell setlocal tabstop=8
@@ -148,9 +151,9 @@ if has("gui_running")
         set guifont=DejaVu\ Sans\ Mono\ Book\ 14
     else
         set guifont=DejaVu\ Sans\ Mono:h14
+        " Disable terminal bells
+        set noeb vb t_vb=
     endif
-    " Disable terminal bells
-    set vb t_vb=
 endif
 
 " Python Mode
