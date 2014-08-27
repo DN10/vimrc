@@ -28,7 +28,7 @@ Bundle 'tpope/vim-markdown'
 Bundle 'klen/python-mode'
 "Bundle 'Conque-Shell'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'jnwhiteh/vim-golang'
+Bundle 'fatih/vim-go'
 Bundle 'terryma/vim-multiple-cursors'
 "Bundle 'airblade/vim-gitgutter'
 Bundle 'Valloric/YouCompleteMe'
@@ -115,22 +115,22 @@ let g:tagbar_type_markdown = {
 \ }
 
 " Ruby stuff
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-autocmd Filetype ruby,eruby setlocal tabstop=2 shiftwidth=2 softtabstop=2
+"autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+"autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+"autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+"autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+autocmd Filetype ruby,eruby,python setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 " PHP
 autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 " Python
-autocmd FileType python setlocal tabstop=2 shiftwidth=2 softtabstop=2
-
-" Python
 "autocmd FileType python setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class  
 " Haskell
 autocmd FileType haskell setlocal tabstop=8
+
+" Puppet
+"autocmd BufRead,BufNew let g:loaded_syntastic_puppet_puppetlint_checker = 1
 
 " For all text files set 'textwidth' to 78 characters.
 "autocmd FileType text setlocal textwidth=78
@@ -148,11 +148,9 @@ vmap <C-C> "+y
 
 if has("gui_running")
     if has("gui_gtk2")
-        set guifont=DejaVu\ Sans\ Mono\ Book\ 14
+        set guifont=Fira\ Mono\ 14
     else
-        set guifont=DejaVu\ Sans\ Mono:h14
-        " Disable terminal bells
-        set noeb vb t_vb=
+        set guifont=Fira\ Mono:h14
     endif
 endif
 
