@@ -131,6 +131,7 @@ autocmd FileType haskell setlocal tabstop=8
 
 " Puppet
 "autocmd BufRead,BufNew let g:loaded_syntastic_puppet_puppetlint_checker = 1
+autocmd BufRead,BufNew *.eyaml set filetype=yaml
 
 " For all text files set 'textwidth' to 78 characters.
 "autocmd FileType text setlocal textwidth=78
