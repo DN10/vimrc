@@ -35,6 +35,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'mileszs/ack.vim'
 Bundle 'wting/rust.vim'
 Bundle 'mikewest/vimroom'
+Bundle 'elixir-lang/vim-elixir'
 
 " Non github
 Bundle 'git://git.wincent.com/command-t.git'
