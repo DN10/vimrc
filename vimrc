@@ -36,7 +36,11 @@ Bundle 'mileszs/ack.vim'
 Bundle 'wting/rust.vim'
 Bundle 'mikewest/vimroom'
 Bundle 'elixir-lang/vim-elixir'
-
+Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
+Plugin 'mxw/vim-jsx'
+Plugin 'pangloss/vim-javascript'
+Plugin 'elzr/vim-json'
+ 
 " Non github
 Bundle 'git://git.wincent.com/command-t.git'
 
@@ -134,6 +138,10 @@ autocmd FileType haskell setlocal tabstop=8
 "autocmd BufRead,BufNew let g:loaded_syntastic_puppet_puppetlint_checker = 1
 autocmd BufRead,BufNew *.eyaml set filetype=yaml
 
+" Javascript
+let g:syntastic_javascript_checkers = ['jsxhint']
+let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
+
 " For all text files set 'textwidth' to 78 characters.
 "autocmd FileType text setlocal textwidth=78
 
@@ -154,8 +162,12 @@ if has("gui_running")
     else
         set guifont=Fira\ Mono:h14
     endif
+    " Disable terminal bells
+    set vb t_vb=
 endif
 
 " Python Mode
-let g:mode_lint_checker = "pylint"
-let g:pymode_lint_ignore = "W0311,E501,E503,E111"
+"let g:mode_lint_checker = "pylint"
+"let g:pymode_lint_ignore = "W0311,E501,E503,E111"
+"let g:pymode_lint_config = "~/.pylintrc"
+let g:pymode_lint = 0
