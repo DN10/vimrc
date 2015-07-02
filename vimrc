@@ -25,7 +25,7 @@ Bundle 'tpope/vim-speeddating'
 Bundle 'scrooloose/syntastic'
 Bundle 'rodjek/vim-puppet'
 Bundle 'tpope/vim-markdown'
-Bundle 'klen/python-mode'
+"Bundle 'klen/python-mode'
 "Bundle 'Conque-Shell'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'fatih/vim-go'
@@ -40,13 +40,16 @@ Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 Plugin 'mxw/vim-jsx'
 Plugin 'pangloss/vim-javascript'
 Plugin 'elzr/vim-json'
- 
+Plugin 'suan/vim-instant-markdown'
+Plugin 'SirVer/ultisnips'
+Plugin 'solarnz/thrift.vim'
+
 " Non github
 Bundle 'git://git.wincent.com/command-t.git'
 
 nmap <leader>tg :TagbarToggle<CR>
 
-syntax on 
+syntax on
 set ruler
 set showcmd		" Show (partial) command in status line.
 set showmatch		" Show matching brackets.
@@ -88,7 +91,7 @@ endif
 
 "VimOrganizer
 let g:ft_ignore_pat = '\.org'
-au! BufRead,BufWrite,BufWritePost,BufNewFile *.org 
+au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
 au BufEnter *.org            call org#SetOrgFileType()
 let g:org_command_for_emacsclient='emacsclient -a'
 let g:org_agenda_select_dirs=['~/Tasks']
@@ -130,7 +133,7 @@ autocmd Filetype ruby,eruby,python setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 " Python
-"autocmd FileType python setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class  
+"autocmd FileType python setlocal smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 " Haskell
 autocmd FileType haskell setlocal tabstop=8
 
@@ -171,3 +174,4 @@ endif
 "let g:pymode_lint_ignore = "W0311,E501,E503,E111"
 "let g:pymode_lint_config = "~/.pylintrc"
 let g:pymode_lint = 0
+autocmd BufWritePre * :%s/\s\+$//e
