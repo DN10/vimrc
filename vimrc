@@ -1,10 +1,10 @@
 filetype off
 set nocompatible
 
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
+Bundle 'gmarik/Vundle.vim'
 
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
@@ -12,7 +12,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'jcf/vim-latex'
 Bundle 'wlangstroth/vim-haskell'
 Bundle 'tpope/vim-ragtag'
-Bundle 'hsitz/VimOrganizer'
+Bundle 'jceb/vim-orgmode'
 Bundle 'utl.vim'
 Bundle 'calendar.vim--Matsumoto'
 Bundle 'chrisbra/NrrwRgn'
@@ -46,6 +46,8 @@ Plugin 'solarnz/thrift.vim'
 
 " Non github
 Bundle 'git://git.wincent.com/command-t.git'
+
+call vundle#end()
 
 nmap <leader>tg :TagbarToggle<CR>
 
@@ -175,3 +177,4 @@ endif
 "let g:pymode_lint_config = "~/.pylintrc"
 let g:pymode_lint = 0
 autocmd BufWritePre * :%s/\s\+$//e
+let g:org_export_init_script ~/.emacs.d/init.el
