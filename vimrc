@@ -34,7 +34,6 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'mileszs/ack.vim'
 Bundle 'wting/rust.vim'
-Bundle 'mikewest/vimroom'
 Bundle 'elixir-lang/vim-elixir'
 Plugin 'docker/docker' , {'rtp': '/contrib/syntax/vim/'}
 Plugin 'mxw/vim-jsx'
@@ -43,6 +42,8 @@ Plugin 'elzr/vim-json'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'SirVer/ultisnips'
 Plugin 'solarnz/thrift.vim'
+Plugin 'junegunn/goyo.vim'
+
 
 " Non github
 Bundle 'git://git.wincent.com/command-t.git'
@@ -177,4 +178,3 @@ endif
 "let g:pymode_lint_config = "~/.pylintrc"
 let g:pymode_lint = 0
 autocmd BufWritePre * :%s/\s\+$//e
-let g:org_export_init_script ~/.emacs.d/init.el
