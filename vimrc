@@ -43,10 +43,7 @@ Plugin 'suan/vim-instant-markdown'
 Plugin 'SirVer/ultisnips'
 Plugin 'solarnz/thrift.vim'
 Plugin 'junegunn/goyo.vim'
-
-
-" Non github
-Bundle 'git://git.wincent.com/command-t.git'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 call vundle#end()
 
@@ -59,13 +56,11 @@ set showmatch		" Show matching brackets.
 set ignorecase		" Do case insensitive matching
 set smartcase		" Do smart case matching
 set incsearch		" Incremental search
-"set autowrite		" Automatically save before commands like :next and :make
 set hidden             " Hide buffers when they are abandoned
 set mouse=a		" Enable mouse usage (all modes)
 "Custom options:
 set nobackup		" Don't keep a backup file
 set nosol		" Cursor kept in same column (if possible)
-"set title		" Show title in terminal
 set ttyfast		" Smoother changes
 set number		" Line numbers
 filetype on
@@ -77,9 +72,19 @@ set expandtab		" Converts tab to spaces
 set softtabstop=2
 set autoindent
 set backspace=indent,eol,start " Smart backspacing
-"let g:GetLatestVimScripts_allowautoinstall=1
+autocmd BufWritePre * :%s/\s\+$//e
+" Mouse highlight quick copy
+vmap <C-C> "+y
 
-let loaded_vimspell = 1
+" Use <C-L> to clear the highlighting of :set hlsearch.
+if maparg('<C-L>', 'n') ==# ''
+  nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+endif
+
+if v:version > 703 || v:version == 703 && has("patch541")
+  set formatoptions+=j " Delete comment character when joining commented lines
+endif
+
 set background=dark
 
 if has("gui_running")
@@ -89,10 +94,23 @@ if has("gui_running")
 else
     let g:solarized_termtrans=1
     colorscheme solarized
-
 endif
 
-"VimOrganizer
+
+if has("gui_running")
+    if has("gui_gtk2")
+        set guifont=Fira\ Mono\ 14
+    else
+        set guifont=Fira\ Mono:h14
+    endif
+    " Disable terminal bells
+    set vb t_vb=
+endif
+
+"""""""""
+" Plugins
+"""""""""
+" VimOrganizer
 let g:ft_ignore_pat = '\.org'
 au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
 au BufEnter *.org            call org#SetOrgFileType()
@@ -148,9 +166,6 @@ autocmd BufRead,BufNew *.eyaml set filetype=yaml
 let g:syntastic_javascript_checkers = ['jsxhint']
 let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
 
-" For all text files set 'textwidth' to 78 characters.
-"autocmd FileType text setlocal textwidth=78
-
 " LaTeX
 let g:Tex_CompileRule_pdf='pdflatex --shell-escape -synctex=1 --interaction=nonstopmode $*'
 let g:Tex_MultipleCompileFormats='pdf,aux,dvi,ps'
@@ -159,22 +174,12 @@ let g:Tex_DefaultTargetFormat='pdf'
 " Fugitive
 command GSquashLast2 Git rebase -i HEAD~2
 
-" Mouse highlight quick copy
-vmap <C-C> "+y
-
-if has("gui_running")
-    if has("gui_gtk2")
-        set guifont=Fira\ Mono\ 14
-    else
-        set guifont=Fira\ Mono:h14
-    endif
-    " Disable terminal bells
-    set vb t_vb=
-endif
-
 " Python Mode
 "let g:mode_lint_checker = "pylint"
 "let g:pymode_lint_ignore = "W0311,E501,E503,E111"
 "let g:pymode_lint_config = "~/.pylintrc"
 let g:pymode_lint = 0
-autocmd BufWritePre * :%s/\s\+$//e
+
+" ctrl-p
+let g:ctrlp_map = '<Leader>t'
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
